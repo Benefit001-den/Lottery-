@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Business App</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: #f5f6fa;
+    }
+
+    /* LOGIN PAGE */
+    .login-box {
+      width: 320px;
+      margin: 120px auto;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+      text-align: center;
+    }
+
+    input {
+      width: 100%;
+      padding: 12px;
+      margin: 8px 0;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      margin-top: 10px;
+      border: none;
+      border-radius: 8px;
+      background: #000;
+      color: white;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #333;
+    }
+
+    /* DASHBOARD */
+    .dashboard {
+      display: none;
+    }
+
+    .layout {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px;
+      background: white;
+      padding: 20px;
+      border-right: 1px solid #eee;
+    }
+
+    .sidebar h2 {
+      margin-bottom: 20px;
+    }
+
+    .sidebar button {
+      width: 100%;
+      margin-bottom: 10px;
+      background: #f1f1f1;
+      color: #000;
+    }
+
+    .main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .card {
+      background: white;
+      padding: 20px;
+      border-radius: 12px;
+      margin-bottom: 15px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+
+<body>
+
+<!-- LOGIN -->
+<div class="login-box" id="loginBox">
+  <h2>Login</h2>
+
+  <input type="text" id="username" placeholder="Username">
+  <input type="password" id="password" placeholder="Password">
+
+  <button onclick="login()">Login</button>
+</div>
+
+<!-- DASHBOARD -->
+<div class="dashboard" id="dashboard">
+
+  <div class="layout">
+
+    <div class="sidebar">
+      <h2>BizApp</h2>
+      <button onclick="showHome()">Home</button>
+      <button onclick="logout()">Logout</button>
+    </div>
+
+    <div class="main">
+      <div class="card">
+        <h3>Welcome</h3>
+        <p id="welcomeText">You are logged in</p>
+      </div>
+
+      <div class="card">
+        <h3>Status</h3>
+        <p>System running normally</p>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+<script>
+  function login() {
+    const user = document.getElementById("username").value;
+
+    if (user) {
+      document.getElementById("loginBox").style.display = "none";
+      document.getElementById("dashboard").style.display = "block";
+
+      document.getElementById("welcomeText").innerText =
+        "Welcome, " + user;
+    } else {
+      alert("Enter username");
+    }
+  }
+
+  function logout() {
+    document.getElementById("loginBox").style.display = "block";
+    document.getElementById("dashboard").style.display = "none";
+  }
+
+  function showHome() {
+    alert("Home clicked");
+  }
+</script>
+
+</body>
+</html>
