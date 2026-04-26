@@ -1,0 +1,93 @@
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f5f6fa;
+}
+
+/* LOGIN BOX */
+.login-box {
+  width: 320px;
+  margin: 120px auto;
+  background: white;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  text-align: center;
+}
+
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+button {
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 8px;
+  background: black;
+  color: white;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #333;
+}
+
+/* DASHBOARD */
+.dashboard {
+  display: none;
+}
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+/* SIDEBAR */
+.sidebar {
+  width: 220px;
+  background: white;
+  padding: 20px;
+  border-right: 1px solid #eee;
+}
+
+.sidebar h2 {
+  margin-bottom: 20px;
+}
+
+.sidebar button {
+  background: #f1f1f1;
+  color: black;
+  margin-bottom: 10px;
+}
+
+/* MAIN */
+.main {
+  flex: 1;
+  padding: 20px;
+}
+
+/* CARDS */
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 12px;
+  margin-bottom: 15px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+  }
+}
